@@ -112,6 +112,21 @@ function Header() {
                                             <Link to={menu?.path}>{}
                                                 {menu?.name}
                                             </Link>
+                                            {
+                                                menu.child && (
+                                                    <ul className='header__menu__dropdown'>
+                                                        {
+                                                            menu.child.map((childItem, childKey) => (
+                                                                <li key={`${menukey}.${childKey}`}>
+                                                                    <Link to={childItem.path}>
+                                                                        {childItem.name}
+                                                                    </Link>
+                                                                </li>
+                                                            ))
+                                                        }
+                                                    </ul>
+                                                )
+                                            }
                                         </li>
                                     )) 
                                 }

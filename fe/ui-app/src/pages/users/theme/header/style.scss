@@ -79,10 +79,12 @@
         justify-content: space-between;
 
         li {
+            position: relative;
+
             a {
                 text-decoration: none;
                 font-size: 14px;
-                color:  map.get($theme-colors, "bold-text");
+                color: map.get($theme-colors, "bold-text");
                 text-transform: uppercase;
                 font-weight: bold;
                 letter-spacing: 2px;
@@ -92,8 +94,39 @@
             }
         }
 
+        li:hover .header__menu__dropdown {
+            opacity: 1;
+            visibility: visible;
+        }
+
         .active a {
             color:  map.get($theme-colors, "main");
+        }
+
+        .header__menu__dropdown {
+            background: #222222;
+            display: block;
+            position: absolute;
+            width: 180px;
+            z-index: 9;
+            padding: 5px 0;
+            transition: all, 0.3s;
+            opacity: 0;
+            visibility: hidden;
+
+
+            li {
+                a {
+                    text-transform: capitalize;
+                    color: white;
+                    font-weight: 400;
+                    padding: 5px 15px;
+                }
+
+                :hover {
+                    color: map.get($theme-colors, "main");
+                }
+            }
         }
     }
 }
