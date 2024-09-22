@@ -1,0 +1,109 @@
+@use "sass:map";
+@import "style/pages/theme";
+
+.footer {
+    background-color: #f3f6fa;
+    padding-top: 70px;
+    padding-bottom: 0;
+
+    .footer__about {
+        margin-bottom: 30px;
+
+        .footer__about_logo {
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        ul li {
+            font-size: 16px;
+            color: map.get($theme_colors, "normal-text");
+            line-height: 36px;
+            list-style: none;
+        }
+    }
+
+    .footer__widget {
+        margin-bottom: 30px;
+        overflow: hidden;
+
+        h6 {
+            color: map.get($theme-colors, "normal-text");
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        ul {
+            float: left;
+            width: 50%;
+
+            li {
+                list-style: none;
+
+                a {
+                    text-decoration: none;
+                    color: map.get($theme-colors, "normal-text");
+                    font-size: 14px;
+                    line-height: 32px;
+                }
+            }
+        }
+
+        p {
+            font-size: 14px;
+            color: map.get($theme-colors, "normal-text");
+            margin-bottom: 30px;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+
+            input {
+                width: 100%;
+                font-size: 16px;
+                padding-left: 20px;
+                color: map.get($theme-colors, "normal-text");
+                height: 46px;
+                border: 1px solid #ededed;
+                outline: none;
+
+                ::placeholder {
+                    color: map.get($theme-colors, "normal-text");
+                }
+            }
+            
+            button {
+                height: 46px;
+                padding: 0px 26px;
+                min-width: max-content;
+            }
+        }
+    }  
+
+    .footer__widget__social {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        margin-top: 20px;
+    
+        div {
+            padding: 8px;
+            background-color: white;
+            border-radius: 50%;
+            color: #404040;
+            font-size: 18px;
+            border: 1px solid #ededed;
+            transition: all, 0.3s;
+
+            &:hover {
+                background: map.get($theme-colors, "main");
+                color: white;
+                border-color: white;
+            }
+        }
+    }
+}
+
+
+
