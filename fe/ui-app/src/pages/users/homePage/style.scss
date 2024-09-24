@@ -1,0 +1,92 @@
+@use "sass:map";
+@import "style/pages/theme";
+
+.container__categories-slider {
+    min-width: 1200px !important;
+    margin-top: 30px !important;
+    padding: 0 !important;
+
+    .categories__slider {
+        .categories__slider-item {
+            height: 300px;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top center;
+            border-radius: 5px;
+
+            p {
+                position: absolute;
+                left: 5%;
+                bottom: 20px;
+                text-align: center;
+                font-size: 18px;
+                color: map.get($theme-colors, "normal-text");
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                padding: 12px 0px 10px;
+                width: 270px;
+                cursor: pointer;
+
+                &:hover {
+                    background: rgb(237, 237, 237);
+                }
+            }
+
+        }
+
+        //class mặc định của thư viện react-multi-carousel
+        .react-multi-carousel-item {
+            margin: 0px 5px;
+        }
+
+        .react-multi-carousel-item:last-child,
+        .react-multi-carousel-item:first-child {
+            margin: 0;
+        }
+    }
+}
+
+.featured {
+    margin-top: 50px;
+
+    .section-title {
+        margin-bottom: 50px;
+        text-align: center;
+        
+        h2 {
+            position: relative;
+        }
+
+        h2::after {
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            right: 0;
+            height: 4px;
+            width: 80px;
+            background: map.get($theme-colors, "main");
+            content: "";
+            margin: 0 auto;
+        }
+    }
+
+    //class mặc định của thư viện
+    .react-tabs {
+        ul {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+        li {
+            list-style: none;
+            font-size: 18px;
+            color: map.get($theme-colors, "normal-text");
+            display: inline-block;
+            margin-right: 25px;
+            position: relative;
+            cursor: pointer;
+        }
+    }
+}

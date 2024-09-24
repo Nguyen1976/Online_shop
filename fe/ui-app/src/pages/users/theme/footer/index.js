@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { Link } from "react-router-dom";
 import './style.scss';
-import { AiOutlineAccountBook, AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai';
+import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin } from 'react-icons/ai';
 
 function Footer() {
     return (  
