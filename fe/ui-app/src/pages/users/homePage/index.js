@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import { Link } from 'react-router-dom';
 
 import "./style.scss";
 
@@ -14,6 +15,18 @@ import cat5Img from "assets/users/images/categories/cat5.png";
 
 import feature1Img from "assets/users/images/featured/featured-1.png";
 import feature2Img from "assets/users/images/featured/featured-2.png";
+import feature3Img from "assets/users/images/featured/featured-3.png";
+import feature4Img from "assets/users/images/featured/featured-4.png";
+import feature5Img from "assets/users/images/featured/featured-5.png";
+import feature6Img from "assets/users/images/featured/featured-6.png";
+import feature7Img from "assets/users/images/featured/featured-7.png";
+import feature8Img from "assets/users/images/featured/featured-8.png";
+
+import banner1Img from "assets/users/images/banner/banner-1.png";
+import banner2Img from "assets/users/images/banner/banner-2.png";
+
+import { AiOutlineEye, AiOutlineShoppingCart } from 'react-icons/ai';
+import { formatter } from 'utils/fomater';
 
 
 function HomePage() {
@@ -75,6 +88,36 @@ function HomePage() {
                     name: "Chuối",
                     price: 17800
                 },
+                {
+                    img: feature3Img,
+                    name: "Ổi",
+                    price: 25000
+                },
+                {
+                    img: feature4Img,
+                    name: "Dưa hấu",
+                    price: 44020
+                },
+                {
+                    img: feature5Img,
+                    name: "Nho tím",
+                    price: 120000
+                },
+                {
+                    img: feature6Img,
+                    name: "Humburger",
+                    price: 86000
+                },
+                {
+                    img: feature7Img,
+                    name: "Xoài keo",
+                    price: 69000
+                },
+                {
+                    img: feature8Img,
+                    name: "Táo Úc",
+                    price: 53000
+                },
             ]
         },
         freshMeat: {
@@ -86,19 +129,88 @@ function HomePage() {
                     price: 20000
                 },
             ]
-        }
+        },
+        fruits: {
+            title: "Trái cây",
+            product: [
+                {
+                    img: feature2Img,
+                    name: "Chuối",
+                    price: 17800
+                },
+                {
+                    img: feature3Img,
+                    name: "Ổi",
+                    price: 25000
+                },
+                {
+                    img: feature4Img,
+                    name: "Dưa hấu",
+                    price: 44020
+                },
+                {
+                    img: feature5Img,
+                    name: "Nho tím",
+                    price: 120000
+                },
+                {
+                    img: feature7Img,
+                    name: "Xoài keo",
+                    price: 69000
+                },
+                {
+                    img: feature8Img,
+                    name: "Táo Úc",
+                    price: 53000
+                },
+            ]
+        },
+        fastFood: {
+            title: "Thức ăn nhanh",
+            product: [
+                {
+                    img: feature6Img,
+                    name: "Humburger",
+                    price: 86000
+                },
+            ]
+        },
     }
 
     const renderFeaturedProducts = (data) => {
-        const tabList = [];
-        const tabPanels = [];
+        const tabList = [];//trong tablist sẽ có 4 cái tab chính là 4 cái key.title
+        const tabPanels = [];//Trong tabpanels cũng sẽ có 4 cái mảng mỗi mảng sẽ chứa các đối tượng là các sản phẩm và hiểu thị theo tabpanel
         
         Object.keys(data).forEach((key, index) => {
             tabList.push(<Tab key={index}>{data[key].title}</Tab>);
             
             const tabPanel = [];
             data[key].product.forEach((item, j) => {
-                tabPanel.push(<div key={j}>{item.name}</div>);
+                tabPanel.push(
+                <div className='col-lg-3' key={j}>
+                    <div className='featured__item'>
+                        <div className='featured__item-pic'
+                            style={{
+                                backgroundImage: `url(${item.img})`,
+                            }}
+                        >
+                            <ul className='featured__item-pic--hover'>
+                                <li>
+                                    <AiOutlineEye />
+                                </li>
+                                <li>
+                                    <AiOutlineShoppingCart />
+                                </li>
+                            </ul>
+                        </div>
+                        <div className='featured__item-text'>
+                            <h6>
+                                <Link to="">{item.name}</Link> 
+                            </h6>
+                            <h5>{formatter(item.price)}</h5>
+                        </div>
+                    </div>
+                </div>);
             });
             tabPanels.push(tabPanel);
         });
@@ -108,10 +220,12 @@ function HomePage() {
             <>
                 <Tabs>
                     <TabList>
+                        {/* trả về 4 cái tab là 4 cái key */}
                         {tabList}
                     </TabList>
 
-                    {
+                    {   
+                        //trả về 4 cái tabpanel chứa các sản phẩm
                         tabPanels.map((item, key) => (
                             <TabPanel key={key}>
                                 <div className="row">
@@ -120,7 +234,6 @@ function HomePage() {
                             </TabPanel>
                         ))
                     }
-            
                 </Tabs>
             </>
         )
@@ -157,6 +270,24 @@ function HomePage() {
                 </div>
             </div>
             {/* Featured End */}
+
+
+
+            {/* Banner Begin */}
+            <div className="container">
+                <div className="banner">
+                    <div className="banner__pic">
+                        <img src={banner1Img} alt="banner" />
+                    </div>
+                    <div className="banner__pic">
+                        <img src={banner2Img} alt="banner" />
+                    </div>
+                </div>
+            </div>
+            {/* Banner End */}
+
+
+
         </>
     );
 }

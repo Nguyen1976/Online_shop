@@ -89,4 +89,94 @@
             cursor: pointer;
         }
     }
+
+    .featured__item {
+        margin-bottom: 50px;
+        padding: 0px 5px;
+
+        &:hover {
+            .featured__item-pic--hover {
+                bottom: -15% !important;
+            }
+        }
+
+        .featured__item-pic {
+            height: 270px;
+            position: relative;
+            overflow: hidden;
+            background-position: center;
+
+        }
+
+        .featured__item-pic--hover {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -40%;
+            width: 100%;
+            text-align: center;
+            transition: all, 0.5s;
+
+            li {
+                list-style: none;
+                display: inline-block;
+                margin-right: 10px;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                border-radius: 50%;
+
+                &:hover {
+                    background-color: #7fad39;
+
+                    svg {
+                        background-color: #7fad39;
+                        border-color: #7fad39;
+                        color: #fff;
+                        transform: rotate(360deg) !important;
+                    }
+                }
+
+                svg {
+                    background-color: #fff;
+                    color: #565555;
+                    transition: all, 0.3s;
+                }
+            }
+        }
+
+        .featured__item-text {
+            text-align: center;
+
+            h6 {
+                margin-top: 10px;
+                font-size: 16px;
+                font-weight: 400;
+
+                a {
+                    text-decoration: none;
+                    color: map.get($theme-colors, "main");
+                }
+            }
+
+            h5 {
+                color: map.get($theme-colors, "normal-text");
+                font-size: 18px;
+                font-weight: 700;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.banner {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+
+    img {
+        width: 100%;
+    }
 }
