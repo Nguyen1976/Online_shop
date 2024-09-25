@@ -1,6 +1,8 @@
 import { memo } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+// import { Carousel } from 'react-responsive-carousel';
+// import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { Link } from 'react-router-dom';
@@ -35,19 +37,19 @@ function HomePage() {
     const responsive = {
         superLargeDesktop: {
             breakpoint: { max: 4000, min: 3000 },
-            items: 5
+            items: 5,
         },
         desktop: {
             breakpoint: { max: 3000, min: 1024 },
-            items: 4
+            items: 4,
         },
         tablet: {
             breakpoint: { max: 1024, min: 464 },
-            items: 2
+            items: 2,
         },
         mobile: {
             breakpoint: { max: 464, min: 0 },
-            items: 1
+            items: 1,
         }
     };
 
@@ -187,7 +189,7 @@ function HomePage() {
             const tabPanel = [];
             data[key].product.forEach((item, j) => {
                 tabPanel.push(
-                <div className='col-lg-3' key={j}>
+                <div className='col-lg-3 col-md-4 col-sm-6 col-xs-12' key={j}>
                     <div className='featured__item'>
                         <div className='featured__item-pic'
                             style={{

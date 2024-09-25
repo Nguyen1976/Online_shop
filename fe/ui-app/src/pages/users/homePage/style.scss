@@ -1,5 +1,6 @@
 @use "sass:map";
 @import "style/pages/theme";
+@import "style/pages/responsive";
 
 .container__categories-slider {
     min-width: 1200px !important;
@@ -105,6 +106,7 @@
             position: relative;
             overflow: hidden;
             background-position: center;
+            background-repeat: no-repeat;
 
         }
 
@@ -176,7 +178,39 @@
     gap: 20px;
     margin-bottom: 30px;
 
+    .banner__pic {
+        width: 50%;
+    }
+
     img {
         width: 100%;
+    }
+}
+
+@include Responsive($MEDIUM_DEVICE) {
+    .container {
+        width: 990px !important;
+    }
+
+    .react-multi-carousel-list ul li {
+        width: 300px !important;
+    }
+}
+
+@include Responsive($TABLET_DEVICE) {
+    .container {
+        width: 750px !important;
+    }
+    .react-multi-carousel-list ul li {
+        width: 300px !important;
+    }
+}
+
+@include Responsive($WIDE_DEVICE) {
+    .container {
+        width: 540px !important;
+    }
+    .react-multi-carousel-list ul li {
+        width: 300px !important;
     }
 }

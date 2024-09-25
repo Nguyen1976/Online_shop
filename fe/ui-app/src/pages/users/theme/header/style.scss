@@ -1,5 +1,7 @@
 @use "sass:map";
+@use "header";
 @import "style/pages/theme";
+@import "style/pages/responsive";
 
 $bannerImg: "/assets/users/images/hero/banner.png";
 
@@ -359,6 +361,62 @@ $bannerImg: "/assets/users/images/hero/banner.png";
                     letter-spacing: 2px;
                 }
             }
+        }
+    }
+}
+.humberger__open,
+.humberger__menu-wrapper {
+    display: none;
+}
+
+@include Responsive($MEDIUM_DEVICE) {
+    .hero__search-form {
+        width: 530px !important;
+    }
+}
+
+@include Responsive($TABLET_DEVICE) {
+    @include header.header-small-device;
+}
+
+@include Responsive($WIDE_DEVICE) {
+    @include header.header-small-device;
+
+    .hero__search {
+        display: grid;
+        margin-bottom: 20px;
+    }
+
+    .header__logo {
+        width: max-content;
+    }
+
+    .hero__search-form {
+        width: 565px !important;
+    }
+
+    .hero__item {
+        margin-left: unset !important;
+    }
+}
+
+@include Responsive($SMALL_DEVICE) {
+    .hero__search-form {
+        width: 400px !important;
+        padding-left: unset !important;
+
+        button {
+            width: 150px;
+            height: 50px;
+        }
+    }
+
+    .banner {
+        display: block;
+        
+        .banner__pic {
+            width: 100%;
+            margin-bottom: 30px;
         }
     }
 

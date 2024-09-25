@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fontsource/be-vietnam-pro": "^5.1.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -10,6 +11,7 @@
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
     "react-multi-carousel": "^2.8.5",
+    "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.26.2",
     "react-scripts": "5.0.1",
     "react-tabs": "^6.0.2",

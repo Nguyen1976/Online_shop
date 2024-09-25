@@ -1,12 +1,18 @@
 @use "sass:map";
 @import "theme";
 @import "responsive";
+@import "@fontsource/be-vietnam-pro";
 
 
 * {
+    font-family: "Be Vietnam Pro";
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+#root {
+    overflow: hidden;
 }
 
 .container {
@@ -69,6 +75,10 @@
 }
 
 @include Responsive($MEDIUM_DEVICE) {
+    .container {
+        max-width: 960px;
+    }
+
     .col-lg-3 {
         flex: 0 0 25%;
         max-width: 25%;
@@ -78,9 +88,23 @@
         flex: 0 0 50%;
         max-width: 50%;
     }
+
+    .col-xl-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 }
 
 @include Responsive($TABLET_DEVICE) {
+    .container {
+        max-width: 720px;
+    }
+
+    .col-md-4 {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+
     .col-md-6 {
         flex: 0 0 50%;
         max-width: 50%;
@@ -93,6 +117,10 @@
 }
 
 @include Responsive($WIDE_DEVICE) {
+    .container {
+        max-width: 540px;
+    }
+
     .col-sm-6 {
         flex: 0 0 50%;
         max-width: 50%;
@@ -106,6 +134,10 @@
 }
 
 @include Responsive($SMALL_DEVICE) {
+    .container {
+        max-width: 400px;
+    }
+
     .col-xs-12 {
         flex: 0 0 100%;
         max-width: 100%;
